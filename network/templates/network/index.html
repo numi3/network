@@ -1,0 +1,25 @@
+{% extends "network/layout.html" %}
+{% load static %}
+
+{% block script %}
+<script src="{% static 'network/index.js' %}"></script>
+{% endblock script %}
+
+
+{% block body %}
+<div>
+    <p>
+        <form method="post">
+            {% csrf_token %}
+            {{ newpost_form.as_p }}
+            <button id="newPostSubmit" type="submit">Submit</button>
+        </form>
+    </p>
+    <div id="app"></div>
+</div>
+<script type="text/babel" src="{% static 'network/app.js' %}"></script>
+{% endblock %}
+
+
+{% block react %}
+{% endblock react %}
